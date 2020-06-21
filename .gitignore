@@ -44,3 +44,4 @@ app.*.map.json
 
 google-services.json
 GoogleService-Info.plist
+GoogleService-Info2.plist

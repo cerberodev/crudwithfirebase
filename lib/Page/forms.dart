@@ -31,7 +31,7 @@ class _FormsState extends State<Forms> {
 
   createUser() {
     DocumentReference documentReference =
-        Firestore.instance.collection("Users").document(userName);
+        Firestore.instance.collection("DATA").document(userName);
     Map<String, dynamic> users = {
       "userName": userName,
       "userLastName": userLastname,
@@ -46,7 +46,7 @@ class _FormsState extends State<Forms> {
 
   readUser() {
     DocumentReference documentReference =
-        Firestore.instance.collection("Users").document(userName);
+        Firestore.instance.collection("DATA").document(userName);
 
     documentReference.get().then((datasnapshot) {
       print(datasnapshot.data["userName"]);
@@ -58,7 +58,7 @@ class _FormsState extends State<Forms> {
 
   updateUser() {
     DocumentReference documentReference =
-        Firestore.instance.collection("Users").document(userName);
+        Firestore.instance.collection("DATA").document(userName);
     Map<String, dynamic> users = {
       "userName": userName,
       "userLastName": userLastname,
@@ -73,7 +73,7 @@ class _FormsState extends State<Forms> {
 
   deleteUser() {
     DocumentReference documentReference =
-        Firestore.instance.collection("Users").document(userName);
+        Firestore.instance.collection("DATA").document(userName);
 
     documentReference.delete().whenComplete(() {
       print("$userName $userLastname deleted");
@@ -208,7 +208,7 @@ class _FormsState extends State<Forms> {
                   ],
                 ),
                 StreamBuilder(
-                    stream: Firestore.instance.collection("Users").snapshots(),
+                    stream: Firestore.instance.collection("DATA").snapshots(),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return ListView.builder(
