@@ -14,10 +14,31 @@
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
-  <title>crudwithfirebase</title>
+  <title>Firebase CRUD with Flutter</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+  <script id="preloader-script">
+    function removeSafe(id) {
+      if (document.getElementById(id)) {
+        document.getElementById(id).remove();
+      }
+    }
+
+    function verifyIsLoaded() {
+      if (document.getElementsByTagName("flt-glass-pane").length == 1) {
+        removeSafe("preloader");
+        removeSafe("preloader-style");
+        removeSafe("preloader-viewport");
+        removeSafe("preloader-script");
+      } else {
+        setTimeout(verifyIsLoaded, 500);
+      }
+    }
+    verifyIsLoaded();
+  </script>
+
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -29,5 +50,19 @@
     }
   </script>
   <script src="main.dart.js" type="application/javascript"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDG6o0694HARKFpPsXZGYT1s0gGTDHAYyg",
+      authDomain: "crud-firebase-14ff4.firebaseapp.com",
+      databaseURL: "https://crud-firebase-14ff4.firebaseio.com",
+      projectId: "crud-firebase-14ff4",
+      storageBucket: "crud-firebase-14ff4.appspot.com",
+      messagingSenderId: "123425022254",
+      appId: "1:123425022254:web:04820bd672352327169abf",
+      
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 </html>
