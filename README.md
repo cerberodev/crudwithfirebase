@@ -1,6 +1,8 @@
 # crudwhitfirebase
 
-A new Flutter project.
+A Flutter project development in live for GDG Arequipa.
+
+- [GDG Arequipa - Meetup Firebase 2020](https://youtu.be/rRmXWUoqWas?t=2355)
 
 ## Getting Started
 
